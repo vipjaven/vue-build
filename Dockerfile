@@ -32,10 +32,12 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 RUN npm install -g vue-cli
 RUN npm install -g webpack
 RUN npm config set registry https://registry.npm.taobao.org
+ADD node_modules /opt/node_modules
 
 VOLUME /Sourcefiles
 WORKDIR /Sourcefiles
-RUN echo "SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass" >> /usr/bin/build
+
+RUN echo "ln -sf /opt/node_modules ./node_modules" >> /usr/bin/build
 RUN echo "npm install" >> /usr/bin/build
 RUN echo "npm run build" >> /usr/bin/build
 RUN chmod +x /usr/bin/build
