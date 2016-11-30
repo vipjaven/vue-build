@@ -39,5 +39,5 @@ RUN echo "npm install" >> /usr/bin/build
 RUN echo "npm run build" >> /usr/bin/build
 RUN chmod +x /usr/bin/build
 
-ENTRYPOINT ["/usr/bin/build"]
+ENTRYPOINT ["sh","/usr/bin/build"]
 
