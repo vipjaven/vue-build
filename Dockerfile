@@ -37,6 +37,7 @@ ADD node_modules /opt/node_modules
 VOLUME /Sourcefiles
 WORKDIR /Sourcefiles
 
+RUN echo "rm -rf ./node_modules" >> /usr/bin/build
 RUN echo "cp -r /opt/node_modules ./" >> /usr/bin/build
 RUN echo "npm install" >> /usr/bin/build
 RUN echo "npm run build" >> /usr/bin/build
