@@ -31,6 +31,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 RUN npm install -g vue-cli
 RUN npm install -g webpack
+RUN npm install -g node-sass
 RUN npm config set registry https://registry.npm.taobao.org
 
 VOLUME /Sourcefiles
