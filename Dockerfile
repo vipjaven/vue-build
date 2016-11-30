@@ -35,7 +35,7 @@ RUN npm config set registry https://registry.npm.taobao.org
 
 VOLUME /Sourcefiles
 WORKDIR /Sourcefiles
-RUN echo "npm install node-sass" >> /usr/bin/build
+RUN echo "SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass" >> /usr/bin/build
 RUN echo "npm install" >> /usr/bin/build
 RUN echo "npm run build" >> /usr/bin/build
 RUN chmod +x /usr/bin/build
